@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+
+</head>
+
+<body>
+<button id="btn1">js调用kotlin方法</button>
+<button id="btn2">js调用kotlin方法(callback)</button>
+<script>
+    $("#btn1").click(function () {
+      alert("点击了")
+      var json = { "name": "html" }
+      window.jsInterface.showToast(JSON.stringify(json));
+    });
+
+    var showMessage = function (json) {
+      alert(JSON.stringify(json))
+    };
+
+    //callback
+    $("#btn2").click(function () {
+      alert("点击了")
+      var json = { "method": "showCallBackData" }
+      window.jsInterface.getwanData(JSON.stringify(json));
+    });
+
+    var showCallBackData = function (json) {
+      alert(JSON.stringify(json))
+    };
+
+
+  </script>
+
+</body>
+
+
+</html>

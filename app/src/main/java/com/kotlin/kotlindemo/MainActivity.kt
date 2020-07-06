@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
 import com.itheima.updatelib.PatchUtil
+import com.kotlin.kotlindemo.wvdemo.WebViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.toast
@@ -36,6 +37,9 @@ class MainActivity : AppCompatActivity() {
         checkPermission()
         bt_update.setOnClickListener {
             update()
+        }
+        bt_webview.setOnClickListener{
+            startActivity(Intent(this, WebViewActivity::class.java))
         }
     }
     private fun checkPermission() { //检查权限（NEED_PERMISSION）是否被授权 PackageManager.PERMISSION_GRANTED表示同意授权
